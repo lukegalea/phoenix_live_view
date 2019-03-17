@@ -626,7 +626,7 @@ class View {
   }
 
   pushKey(keyElement, kind, event, phxEvent){
-    if(this.prevKey === event.key){ return }
+    //if(this.prevKey === event.key){ return }
     this.prevKey = event.key
     this.pushWithReply("event", {
       type: `key${kind}`,
