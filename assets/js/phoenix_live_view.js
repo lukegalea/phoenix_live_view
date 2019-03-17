@@ -485,7 +485,6 @@ class View {
     this.newChildrenAdded = false
     this.gracefullyClosed = false
     this.el = el
-    this.prevKey = null
     this.bindingPrefix = liveSocket.getBindingPrefix()
     this.loader = this.el.nextElementSibling
     this.id = this.el.id
@@ -626,8 +625,6 @@ class View {
   }
 
   pushKey(keyElement, kind, event, phxEvent){
-    //if(this.prevKey === event.key){ return }
-    this.prevKey = event.key
     this.pushWithReply("event", {
       type: `key${kind}`,
       event: phxEvent,
